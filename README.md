@@ -23,6 +23,30 @@ npm install -g dockerfile-gen
 npm install --save-dev dockerfile-gen
 ```
 
+# Project Type Detection
+
+| Type | Detected By | Dockerfile Type |
+|------|------------|----------------|
+| node | package.json | Node.js base |
+| express | express in dependencies | Node.js with server.js |
+| nestjs | @nestjs/core in dependencies | Node.js with NestJS build |
+| react | react in dependencies | Multi-stage, Nginx |
+| nextjs | next in dependencies | Multi-stage, Nginx |
+| vue | vue in dependencies | Multi-stage, Nginx |
+| svelte | svelte in dependencies | Multi-stage, Nginx |
+| angular | angular in dependencies | Multi-stage, Nginx |
+| python | main.py or Python files | Python with main.py |
+| python-pip | requirements.txt | Python + pip install |
+| python-poetry | pyproject.toml | Python + Poetry (incomplete) |
+| golang | main.go | Multi-stage Golang |
+| rust | main.rs | ❌ Not fully implemented |
+| java | Main.java | ❌ Not implemented yet |
+| spring-boot | pom.xml or Spring files | ❌ Not implemented yet |
+| dotnet | .csproj or Program.cs | ❌ Not implemented yet |
+| laravel | artisan file | ❌ Not implemented yet |
+| rails | Gemfile | ❌ Not implemented yet |
+| static-site | index.html only | Static HTML site via Nginx |
+
 ### VS Code Extension
 
 1. Install from VS Code Marketplace: search for "Dockerfile Generator"
